@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智智智大战</title>
+        <link rel="stylesheet" type="text/css" href="battle_style.css">
+    </head>
+    <body>
+        <header>
+            <h1>智智智大战</h1>
+        </header>
+        <main>
+            <div id="container">
+                <div id="menu-area">
+                    <div id="create-student" class="small-container">
+                        <h2>🤵创建学生区</h2>
+                        <label for="student">请输入学生: </label>
+                        <input type="text" id="student"><br>
+                        <label for="student">请输入学生生命值: </label>
+                        <input type="number" id="student-hp"><br>
+                        <button id="create-students">创建学生</button>
+                    </div>
+                    <div id="remove-student" class="small-container">
+                        <h2>🗑️删除学生区</h2>
+                        <label for="select-students">请选择删除的学生</label>
+                        <select id="select-students" style="height: 30px;">
+                            <!--options-->
+                        </select><br>
+                        <button id="delete" style="background: red">删除battle学生</button><br>
+                        <button id="next" style="background: orangered">撤回(下一步)</button><br>
+                        <button id="last" style="background: seagreen">撤回(上一步)</button>
+                    </div>
+                    <div id="battle" class="small-container">
+                        <h2>⚒️战斗区⚒️</h2>
+                        <button id="start-battle">开始战斗</button>
+                        <p id="battle-status" style="text-align: center">战斗还未开始</p>
+                        <button id="end-battle" disabled>结束战斗</button><hr>
+                        <div id="battle-settings">
+                            <div id="set-delay">
+                                <label for="round-delay">请调整延时</label>
+                                <form oninput="delay_val.value=`每轮延时: ${d.value}ms`">
+                                    <input type="range" id="round_delay" max="500" min="10" step="10"
+                                           name="d" value="150">
+                                    <output name="delay_val" for="d"
+                                            style="display: block; text-align: center;">每轮延时: 150ms</output>
+                                </form>
+                            </div>
+                            <div id="set-attack-method">
+                                <label for="press-space auto">请选择攻击方式</label>
+                                <label for="press-space" style="display: inline">按空格键:</label>
+                                <input type="radio" value="press-space" name="method" id="press-space">
+                                <br>
+                                <label for="auto" style="display: inline">自动:</label>
+                                <input type="radio" value="auto" name="method" id="auto" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><hr>
+                <div id="battle-area" class="small-container">
+                    <div id="cut-down">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <table id="battle-table">
+                        <caption>学生Battle表🔨</caption>
+                        <tbody id="table-tbody"></tbody>
+                    </table>
+                </div>
+                <br><hr>
+                <div id="log-area" class="small-container">
+                    <h2>日志区</h2>
+                    <textarea id="log-info" readonly rows="20"></textarea>
+                </div><br><hr>
+                <div id="data" class="small-container">
+                    <h2>数据处理</h2>
+                    <button id="export-data" style="background: green;">导出数据</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            &copy;Copyright 2025<br>Author: XiaoZhi<br>All rights reserved<br><br>
+            Develop Tool: WebStorm<a href="https://jetbrains.com/webstorm/" target="_blank">
+            <img src="ws.jpeg" alt="WebStorm"></a>
+            <address>
+                <a href="mailto:598820893@qq.com">QQ邮箱📫:59*****93@qq.com</a><br>
+                <a href="tel:+18317166165">电话📞:(+86) 183****6165</a>
+            </address>
+        </footer>
+        <audio controls style="display:none;" loop>
+            <source type="audio/mp3" src="KBShinya%20-%20Sold%20out.ogg">
+        </audio>
+        <script src="battle_script.js"></script>
+    </body>
+</html>
